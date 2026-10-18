@@ -20,7 +20,7 @@
     .searchbox{width:100%;max-width:420px;display:flex;gap:8px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:0 12px}.searchbox input{border:0;outline:0;padding:12px 0;width:100%;background:transparent;color:var(--ink);font-size:14px}.searchbox:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #f2c23020}
     .agenda-list{display:grid;gap:10px}.agenda-item{display:grid;grid-template-columns:112px 1fr auto;gap:16px;align-items:start;background:white;border:1px solid var(--line);border-radius:15px;padding:15px 17px}.agenda-date{font-size:12px;color:var(--muted);font-weight:700;line-height:1.4}.agenda-date strong{display:block;font-size:16px;color:var(--navy);margin-bottom:4px}.agenda-time{display:inline-block;background:#fff1b8;color:#6e5200;border-radius:7px;padding:3px 7px;font-size:12px;font-weight:700;margin-top:5px}.agenda-item h3{font-size:15px;line-height:1.4;margin:0 0 4px;color:var(--navy)}.agenda-item p{margin:0;color:var(--muted);font-size:13px}.status{font-size:11px;font-weight:700;color:var(--green);background:#e6f5ee;border-radius:8px;padding:5px 8px;white-space:nowrap}
     .panel{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.panel-pad{padding:20px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.profile-card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}.profile-card h3{font-family:"Playfair Display",Georgia,serif;font-size:22px;color:var(--navy);margin:0 0 12px}.profile-card dl{display:grid;grid-template-columns:135px 1fr;gap:8px 12px;margin:0;font-size:13px}.profile-card dt{color:var(--muted)}.profile-card dd{margin:0;font-weight:600;overflow-wrap:anywhere}
-    .committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.committee-item{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.committee-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-weight:700;color:var(--navy);font-size:14px}.committee-item summary::-webkit-details-marker{display:none}.committee-item summary:after{content:"＋";font-size:19px;color:var(--gold);line-height:1}.committee-item[open] summary:after{content:"−"}.committee-item .people{padding:0 16px 15px;color:#495565;font-size:13px;white-space:pre-line}.committee-item .people p{margin:0}
+    .committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.committee-item{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.committee-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-weight:700;color:var(--navy);font-size:14px}.committee-item summary::-webkit-details-marker{display:none}.committee-item summary:after{content:"＋";font-size:19px;color:var(--gold);line-height:1}.committee-item[open] summary:after{content:"−"}.committee-item .people{padding:0 16px 15px;color:#495565;font-size:13px;white-space:normal}.committee-item .people p{margin:0}.committee-item .people .coordinator{font-weight:700;color:var(--navy);margin:0 0 7px}.committee-item .people ul{margin:0;padding-left:21px;display:grid;gap:4px}.committee-item .people li{padding-left:2px}.committee-item .people .people-note{margin-top:8px;padding:8px 10px;background:#f5f8fc;border-left:3px solid var(--gold);border-radius:0 7px 7px 0;color:#596779;font-size:12px}
     .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:white}table{width:100%;border-collapse:collapse;min-width:620px;font-size:13px}th{background:var(--navy);color:white;text-align:left;font-size:12px;letter-spacing:.02em;padding:12px 13px;position:sticky;top:0}td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:#fafbfd}tbody tr:last-child td{border-bottom:0}.subnote{color:var(--muted);font-size:12px;margin:10px 0 0}.vendor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.vendor{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:5px}.vendor .vcat{font-size:11px;color:#8a6500;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.vendor strong{color:var(--navy);font-size:15px}.vendor a{margin-top:6px;color:var(--green);text-decoration:none;font-weight:700;font-size:13px;overflow-wrap:anywhere}.vendor a:hover{text-decoration:underline}
     .notice{border-left:4px solid var(--gold);background:#fff9df;border-radius:0 12px 12px 0;padding:13px 15px;color:#5c4a13;font-size:13px}.checklist{display:grid;gap:10px}.check{display:flex;gap:10px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}.check input{accent-color:var(--green);width:18px;height:18px;margin-top:2px;flex:0 0 auto}.check input:checked+span{text-decoration:line-through;color:var(--muted)}
     .footer{background:var(--navy);color:#dbe2eb;padding:26px 20px;text-align:center;font-size:12px}.footer strong{color:var(--gold2)}.backtop{position:fixed;right:18px;bottom:18px;z-index:10;width:45px;height:45px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);font-size:20px;font-weight:700;box-shadow:0 5px 18px #0002;cursor:pointer}
@@ -271,6 +271,30 @@
   }
   updateAgendaStatuses();
   setInterval(updateAgendaStatuses,30000);
+  // Format daftar kepanitiaan menjadi bullet list; koordinator selalu ditampilkan paling atas.
+  document.querySelectorAll('.committee-item .people').forEach(box=>{
+    const raw=box.textContent.replace(/\\n/g,'\n').trim();
+    if(!raw) return;
+    const lines=raw.split(/\n+/).map(line=>line.trim()).filter(Boolean);
+    const coordinatorLine=lines.find(line=>/^koordinator\s*:/i.test(line));
+    const otherLines=lines.filter(line=>line!==coordinatorLine);
+    const cleanItem=value=>value.trim().replace(/^\d+[.)]\s*/, '').replace(/^[-•]\s*/, '').trim();
+    const escapeHTML=value=>value.replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    let html='';
+    if(coordinatorLine){
+      const name=coordinatorLine.replace(/^koordinator\s*:\s*/i,'').trim();
+      html += '<p class="coordinator">Koordinator: '+escapeHTML(name)+'</p>';
+    }
+    const people=[]; const notes=[];
+    otherLines.forEach(line=>{
+      if(/^(penugasan|catatan|keterangan)\s*:/i.test(line)) notes.push(line);
+      else line.split(';').map(cleanItem).filter(Boolean).forEach(item=>people.push(item));
+    });
+    if(people.length) html+='<ul>'+people.map(person=>'<li>'+escapeHTML(person)+'</li>').join('')+'</ul>';
+    notes.forEach(note=>html+='<p class="people-note">'+escapeHTML(note)+'</p>');
+    box.innerHTML=html || '<ul><li>'+escapeHTML(raw)+'</li></ul>';
+  });
+
   function bindSearch(inputId, containerId, emptyId, selector){
     const input=document.getElementById(inputId), container=document.getElementById(containerId), empty=document.getElementById(emptyId);
     if(!input||!container)return;
