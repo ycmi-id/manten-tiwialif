@@ -1,6 +1,6 @@
 # Website Panitia Manten Tiwi & Alif
 
-Website statis responsif untuk GitHub Pages, tema pink pastel dan putih.
+Website statis responsif untuk GitHub Pages, tema biru dan kuning dengan latar putih.
 
 ## Isi
 - Ringkasan progres agenda
@@ -33,3 +33,11 @@ Untuk membuat sinkronisasi bersama, buat project Supabase, buat tabel untuk agen
 - Rundown detail disalin dan dirapikan dari PDF panitia yang diunggah.
 - Beberapa detail dalam dokumen sumber masih kosong/berpotensi perlu konfirmasi (misalnya nama saksi CPP dan waktu rundown yang berbeda antara agenda umum dan detail). Tidak diisi dengan tebakan.
 - Bagian layout sengaja tidak menampilkan denah dari PDF, sesuai permintaan agar area layout dikosongkan.
+
+
+## Pembaruan tema dan status otomatis
+- Palet warna diperbarui menjadi biru, kuning, dan putih.
+- Font utama menggunakan Open Sans (memerlukan koneksi internet untuk memuat Google Fonts; fallback sistem tetap tersedia).
+- Hover tombol dan kartu menyesuaikan palet biru-kuning.
+- Saat website dibuka atau dirender, status agenda diperbarui berdasarkan tanggal lokal perangkat: tanggal yang sudah lewat otomatis menjadi **Selesai**, agenda pada tanggal hari ini menjadi **Berjalan / On Progress**, dan agenda mendatang menjadi **Belum**. Status **Selesai** yang ditandai manual tetap dipertahankan.
+- Status otomatis diproses saat halaman dibuka/diperbarui; website statis tidak berjalan di latar belakang ketika halaman ditutup.
