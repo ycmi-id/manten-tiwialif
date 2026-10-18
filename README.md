@@ -1,6 +1,6 @@
 # Website Panitia Tiwi & Alif
 
-Website statis responsif untuk GitHub Pages, dengan tema biru-kuning, font Open Sans, agenda berstatus otomatis, pencarian panitia/vendor, rundown, dan checklist.
+Website statis responsif untuk GitHub Pages, dengan tema biru-kuning, font Open Sans, agenda berstatus otomatis, pencarian panitia/vendor, dan rundown.
 
 ## Cara upload ke GitHub Pages
 1. Ekstrak ZIP.

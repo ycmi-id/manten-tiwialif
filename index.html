@@ -23,7 +23,7 @@
     .committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.committee-item{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.committee-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-weight:700;color:var(--navy);font-size:14px}.committee-item summary::-webkit-details-marker{display:none}.committee-item summary:after{content:"＋";font-size:19px;color:var(--gold);line-height:1}.committee-item[open] summary:after{content:"−"}.committee-item .people{padding:0 16px 15px;color:#495565;font-size:13px;white-space:normal}.committee-item .people p{margin:0}.committee-item .people .coordinator{font-weight:700;color:var(--navy);margin:0 0 7px}.committee-item .people ul{margin:0;padding-left:21px;display:grid;gap:4px}.committee-item .people li{padding-left:2px}.committee-item .people .people-note{margin-top:8px;padding:8px 10px;background:#f5f8fc;border-left:3px solid var(--gold);border-radius:0 7px 7px 0;color:#596779;font-size:12px}
     .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:white}table{width:100%;border-collapse:collapse;min-width:620px;font-size:13px}th{background:var(--navy);color:white;text-align:left;font-size:12px;letter-spacing:.02em;padding:12px 13px;position:sticky;top:0}td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:#fafbfd}tbody tr:last-child td{border-bottom:0}.subnote{color:var(--muted);font-size:12px;margin:10px 0 0}.vendor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.vendor{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:5px}.vendor .vcat{font-size:11px;color:#8a6500;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.vendor strong{color:var(--navy);font-size:15px}.vendor a{margin-top:6px;color:var(--green);text-decoration:none;font-weight:700;font-size:13px;overflow-wrap:anywhere}.vendor a:hover{text-decoration:underline}
     .notice{border-left:4px solid var(--gold);background:#fff9df;border-radius:0 12px 12px 0;padding:13px 15px;color:#5c4a13;font-size:13px}.checklist{display:grid;gap:10px}.check{display:flex;gap:10px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}.check input{accent-color:var(--green);width:18px;height:18px;margin-top:2px;flex:0 0 auto}.check input:checked+span{text-decoration:line-through;color:var(--muted)}
-    .footer{background:var(--navy);color:#dbe2eb;padding:26px 20px;text-align:center;font-size:12px}.footer strong{color:var(--gold2)}.backtop{position:fixed;right:18px;bottom:18px;z-index:10;width:45px;height:45px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);font-size:20px;font-weight:700;box-shadow:0 5px 18px #0002;cursor:pointer}
+    .footer{background:var(--navy);color:#dbe2eb;padding:26px 20px;text-align:center;font-size:13px}.footer strong{color:var(--gold2)}.footer a{display:inline-block;color:var(--navy);background:var(--gold2);padding:7px 12px;border-radius:8px;margin-left:5px;font-weight:700;text-decoration:none;transition:background .2s,color .2s,transform .2s}.footer a:hover,.footer a:focus{background:#fff;color:var(--navy);transform:translateY(-1px)}.backtop{position:fixed;right:18px;bottom:18px;z-index:10;width:45px;height:45px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);font-size:20px;font-weight:700;box-shadow:0 5px 18px #0002;cursor:pointer}
     .empty{display:none;padding:20px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:12px}.hidden{display:none!important}
 
     /* Interaksi hover/focus konsisten dengan tema biru-kuning */
@@ -198,21 +198,6 @@
       </tbody></table></div>
     </section>
 
-    <section class="section" id="layout">
-      <div class="section-head"><div><span class="tag">Penataan lokasi</span><h2>Layout Area Acara</h2><p>Skema sederhana berdasarkan label layout di dokumen sumber.</p></div></div>
-      <div class="panel panel-pad">
-        <div style="display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;text-align:center">
-          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">KELUARGA CPP</div>
-          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">AREA TENGAH / ACARA</div>
-          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">KELUARGA CPW</div>
-          <div></div><div style="padding:18px 8px;background:#fff1b8;color:#6e5200;border-radius:10px;font-size:12px;font-weight:700">AREA CATERING</div><div></div>
-          <div></div><div style="padding:18px 8px;background:#eaf0f7;color:#1c5595;border-radius:10px;font-size:12px;font-weight:700">AREA TAMU / AKSES</div><div></div>
-          <div></div><div style="padding:18px 8px;background:#f2c230;color:#123b70;border-radius:10px;font-size:12px;font-weight:700">PHOTOBOOTH</div><div></div>
-        </div>
-        <p class="subnote">Skema ini bukan gambar berskala. Konfirmasikan posisi akhir di lokasi bersama HNP Wedding Organizer.</p>
-      </div>
-    </section>
-
     <section class="section" id="vendor">
       <div class="section-head"><div><span class="tag">Kontak cepat</span><h2>Daftar Vendor</h2><p>Tekan nomor telepon untuk menghubungi vendor melalui ponsel.</p></div><label class="searchbox">⌕ <input id="vendorSearch" type="search" placeholder="Cari vendor atau bidang…" aria-label="Cari vendor"></label></div>
       <div class="vendor-grid" id="vendorGrid">
@@ -233,19 +218,9 @@
       <div class="empty" id="vendorEmpty">Vendor tidak ditemukan.</div>
     </section>
 
-    <section class="section" id="checklist">
-      <div class="section-head"><div><span class="tag">Persiapan akhir</span><h2>Checklist Koordinasi</h2><p>Tandai tugas yang sudah dikonfirmasi selama koordinasi.</p></div></div>
-      <div class="checklist">
-        <label class="check"><input type="checkbox"><span>Konfirmasi jam final seserahan, akad nikah, dan resepsi kepada keluarga serta HNP Wedding Organizer.</span></label>
-        <label class="check"><input type="checkbox"><span>Konfirmasi nama saksi CPP dan wakil keluarga CPP yang belum tercantum.</span></label>
-        <label class="check"><input type="checkbox"><span>Konfirmasi nama vendor dekorasi dan busana karena terdapat perbedaan penulisan di dokumen sumber.</span></label>
-        <label class="check"><input type="checkbox"><span>Pastikan bambu, janur, tarub, tenda, kursi, meja, penerangan, sound system, dan catering terkoordinasi.</span></label>
-        <label class="check"><input type="checkbox"><span>Bagikan jadwal terbaru kepada setiap koordinator seksi dan vendor terkait.</span></label>
-      </div>
-    </section>
   </div>
 </main>
-<footer class="footer"><strong>Tiwi & Alif</strong> · Buku Kerja Digital Panitia<br>Walimatul Ursy · 8 November 2026</footer>
+<footer class="footer">Created By <strong>Mr. Glempho</strong> - <a href="https://wa.me/6281334748004?text=Halo%20Mr.%20Glempho%2C%20saya%20ingin%20order%20website." target="_blank" rel="noopener noreferrer">Order Website Klik Disini</a></footer>
 <button class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">↑</button>
 <script>
   const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('navlinks');
