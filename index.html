@@ -1,233 +1,291 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#174a7e">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<title>Panitia Manten Tiwi & Alif</title>
-<style>
-:root{--pink:#3f83c8;--pink-dark:#174a7e;--pink-soft:#eaf3fc;--pink-pale:#f7fbff;--accent:#f5c542;--accent-soft:#fff6d9;--ink:#202d3b;--muted:#5d6b79;--line:#d9e6f2;--white:#fff;--green:#24764e;--amber:#9b6810;--shadow:0 10px 32px #163c6410}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7faff;color:var(--ink);font:15px/1.6 "Open Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer} :focus-visible{outline:3px solid #f5c542;outline-offset:2px} ::selection{background:#f5c542;color:#17334f}.shell{max-width:1240px;margin:auto;padding:22px}.hero{display:flex;align-items:center;gap:22px;background:linear-gradient(125deg,#fff 10%,#eaf3fc 100%);border:1px solid var(--line);border-radius:24px;padding:24px 28px;box-shadow:var(--shadow)}.hero img{width:118px;height:118px;object-fit:contain;border-radius:50%;background:#fff}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--pink-dark);font-weight:800}.hero .eyebrow{display:inline-block;background:var(--accent-soft);padding:5px 9px;border-radius:7px;letter-spacing:.12em}.hero h1{font-family:Georgia,serif;font-size:clamp(27px,4vw,42px);line-height:1.1;margin:5px 0 8px;color:#174a7e}.hero p{margin:0;color:var(--muted)}.hero .date{display:inline-flex;gap:8px;align-items:center;margin-top:12px;padding:7px 12px;border-radius:99px;background:var(--accent-soft);border:1px solid #eed78b;font-size:13px;font-weight:700;color:var(--pink-dark)}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0;padding:10px;background:#edf5fd;border:1px solid var(--line);border-radius:16px;position:sticky;top:8px;z-index:5;backdrop-filter:blur(12px)}.nav button{border:1px solid var(--line);background:#fff;color:var(--muted);padding:10px 14px;border-radius:12px;font-weight:700}.nav button.active,.btn-primary{background:var(--pink-dark);border-color:var(--pink-dark);color:#fff}.nav button:hover,.btn:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--pink-dark);transform:translateY(-1px)}.nav button.active:hover,.btn-primary:hover{background:#123b66;color:#fff;border-color:#123b66}.nav button,.btn,.person-card,.stat,.panel,.agenda-card,.task{transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}.person-card:hover,.stat:hover,.panel:hover,.agenda-card:hover,.task:hover{border-color:#e9c64c;box-shadow:0 12px 28px #163c6417;transform:translateY(-2px)}.view{display:none}.view.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:22px 0 14px}.section-head h2{font-size:22px;margin:0;color:#174a7e}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.stat,.panel,.person-card,.agenda-card,.task{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:var(--shadow)}.stat .label{color:var(--muted);font-size:12px;font-weight:700}.stat strong{display:block;font-size:28px;margin:4px 0;color:#174a7e}.stat small{color:var(--muted)}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel h3{font-size:16px;margin:0 0 12px}.progress-line{height:9px;background:#e4eef8;border-radius:99px;overflow:hidden;margin:12px 0}.progress-line span{height:100%;display:block;background:linear-gradient(90deg,#f5c542,#3f83c8);border-radius:99px}.muted{color:var(--muted)}.pill{display:inline-flex;align-items:center;padding:4px 9px;border-radius:99px;background:var(--pink-soft);color:var(--pink-dark);font-size:11px;font-weight:800;white-space:nowrap}.pill.done{background:#e7f5ed;color:var(--green)}.pill.progress{background:#fff0d9;color:var(--amber)}.pill.upcoming{background:#f4f0f2;color:#71656a}.quick-list{display:grid;gap:10px}.quick-item{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eaf1f8}.quick-item:last-child{border:0}.dot{width:10px;height:10px;margin-top:6px;border-radius:50%;background:var(--pink);flex-shrink:0}.quick-item b{display:block;font-size:14px}.quick-item small{color:var(--muted)}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:12px 0}.toolbar input,.toolbar select,.field input,.field select,.field textarea{border:1px solid #e8d6dd;border-radius:11px;padding:10px 12px;background:#fff;color:var(--ink);min-width:0}.toolbar input{flex:1;min-width:180px}.btn{border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--pink-dark);padding:9px 12px;font-weight:750}.btn-primary{background:var(--pink-dark);color:#fff}.btn-danger{color:#a2384d}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.person-card h3{font-size:15px;margin:9px 0 3px}.person-card p{margin:0;color:var(--muted);font-size:13px}.person-card .role{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--pink-dark)}.agenda-list{display:grid;gap:12px}.agenda-card{display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:start}.agenda-date{background:var(--pink-soft);border-radius:13px;text-align:center;padding:12px 6px;color:var(--pink-dark)}.agenda-date strong{display:block;font-size:23px;line-height:1.2}.agenda-date span{font-size:11px;font-weight:800;text-transform:uppercase}.agenda-card h3{margin:1px 0 5px;font-size:16px}.agenda-card p{margin:0;color:var(--muted);font-size:13px}.agenda-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.task{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}.task h3{font-size:14px;margin:0 0 4px}.task p{font-size:12px;color:var(--muted);margin:0}.task select{padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff}.task-list{display:grid;gap:9px}.field{display:grid;gap:5px;margin-bottom:12px}.field label{font-size:12px;font-weight:800;color:#365d82}.field input,.field select,.field textarea{width:100%}.field textarea{min-height:85px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:11px 13px;border-bottom:1px solid #e5edf5;vertical-align:top}th{background:#edf5fd;color:#174a7e;font-size:11px;text-transform:uppercase;letter-spacing:.05em}tr:last-child td{border-bottom:0}.empty-layout{min-height:280px;border:2px dashed #b9d3eb;border-radius:18px;background:linear-gradient(135deg,#fff,#f7fbff);display:grid;place-items:center;text-align:center;padding:30px;color:#65809a}.empty-layout strong{display:block;color:#174a7e;font-size:18px}.footer{margin-top:30px;border-top:1px solid var(--line);padding:20px 0 6px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px}.footer a{color:var(--pink-dark);font-weight:800;text-decoration:none}.note{padding:12px 14px;background:#fff7dd;border:1px solid #eed78b;color:#765713;border-radius:12px;font-size:12px;margin-bottom:14px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#17334f;color:#fff;padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:10}.modal{position:fixed;inset:0;background:#122b4655;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.open{display:flex}.modal-box{width:min(620px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:20px;padding:22px;box-shadow:0 20px 60px #15314b30}.modal-box h2{margin-top:0;color:#174a7e}.modal-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.hide{display:none!important}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.agenda-card{grid-template-columns:75px 1fr}.agenda-card>.pill{grid-column:2;justify-self:start}.hero{padding:18px}.hero img{width:86px;height:86px}}
-@media(max-width:520px){.nav{position:static;padding:7px;gap:6px}.shell{padding:12px}.hero{gap:12px;padding:15px}.hero img{width:66px;height:66px}.hero p{font-size:12px}.grid{gap:8px}.stat{padding:12px}.stat strong{font-size:23px}.cards{grid-template-columns:1fr}.agenda-card{gap:10px;padding:12px;grid-template-columns:62px 1fr}.agenda-date strong{font-size:19px}.nav button{padding:9px 10px;font-size:12px}.section-head h2{font-size:19px}.form-grid{grid-template-columns:1fr}.task{grid-template-columns:1fr}.task select{width:100%}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b70">
+  <meta name="description" content="Panduan digital panitia pernikahan Tiwi & Alif. Agenda, rundown, susunan panitia, dan kontak vendor.">
+  <title>Panitia Tiwi & Alif — 8 November 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#123b70;--navy2:#1c5595;--gold:#f2c230;--gold2:#ffdf62;--cream:#fff9df;--paper:#fff;--ink:#172638;--muted:#586779;--line:#dfe7f1;--green:#18794e;--shadow:0 12px 32px rgba(18,59,112,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:#f5f6f8;color:var(--ink);font-family:"Open Sans",Arial,sans-serif;font-size:16px;line-height:1.6}
+    a{color:inherit}button,input{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(18,59,112,.97);color:#fff;box-shadow:0 4px 18px #123b7020;backdrop-filter:blur(12px)}
+    .navwrap{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}.brand img{width:44px;height:44px;object-fit:contain;background:#fff;border-radius:50%;padding:2px}.brandtext{min-width:0}.brandtext strong{display:block;font-size:14px;line-height:1.3;letter-spacing:.04em}.brandtext span{display:block;color:#ffdf62;font-size:11px}.navlinks{margin-left:auto;display:flex;align-items:center;gap:5px}.navlinks a{padding:8px 10px;text-decoration:none;color:#f5f6fa;border-radius:10px;font-size:13px;font-weight:600}.navlinks a:hover,.navlinks a:focus{background:#ffffff1c}.menu-btn{display:none;margin-left:auto;background:#ffffff15;border:1px solid #ffffff35;color:white;border-radius:10px;padding:8px 11px}
+    .hero{background:linear-gradient(125deg,#123b70 0%,#1c5595 68%,#e3b51e 150%);color:white;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffdf6255;border-radius:50%;right:-110px;top:-150px;box-shadow:0 0 0 20px #ffdf6210,0 0 0 45px #ffdf6208}.hero-inner{max-width:1180px;margin:auto;padding:48px 20px 44px;display:grid;grid-template-columns:1.5fr .7fr;gap:28px;align-items:center;position:relative;z-index:1}.eyebrow{color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(34px,5vw,58px);line-height:1.1;margin:10px 0 12px;letter-spacing:-.02em}.hero h1 span{color:var(--gold2)}.hero p{max-width:650px;color:#e5eaf1;margin:0 0 22px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:11px 16px;text-decoration:none;font-weight:700;font-size:14px;cursor:pointer;transition:transform .15s,background .15s}.btn:hover{transform:translateY(-1px)}.btn-gold{background:linear-gradient(120deg,#ffdf62,#e6b51c);color:#182538}.btn-light{border:1px solid #ffffff50;color:white;background:#ffffff12}.hero-mark{display:flex;align-items:center;justify-content:center}.hero-mark img{width:min(100%,260px);border-radius:50%;background:#fff;padding:8px;box-shadow:0 15px 45px #0003}
+    .wrap{max-width:1180px;margin:auto;padding:26px 20px 60px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:-2px}.quick-card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow);min-width:0}.quick-card .qicon{width:35px;height:35px;border-radius:11px;display:grid;place-items:center;background:var(--cream);color:#8a6500;font-size:18px;margin-bottom:10px}.quick-card strong{display:block;font-size:14px}.quick-card span{font-size:12px;color:var(--muted);display:block;margin-top:3px}
+    .section{margin-top:35px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:16px}.section-head h2{font-family:"Playfair Display",Georgia,serif;color:var(--navy);font-size:clamp(24px,3vw,32px);line-height:1.2;margin:0}.section-head p{margin:6px 0 0;color:var(--muted);font-size:14px}.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:#fff1b8;color:#6e5200;font-size:11px;font-weight:700;white-space:nowrap}
+    .searchbox{width:100%;max-width:420px;display:flex;gap:8px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:0 12px}.searchbox input{border:0;outline:0;padding:12px 0;width:100%;background:transparent;color:var(--ink);font-size:14px}.searchbox:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #f2c23020}
+    .agenda-list{display:grid;gap:10px}.agenda-item{display:grid;grid-template-columns:112px 1fr auto;gap:16px;align-items:start;background:white;border:1px solid var(--line);border-radius:15px;padding:15px 17px}.agenda-date{font-size:12px;color:var(--muted);font-weight:700;line-height:1.4}.agenda-date strong{display:block;font-size:16px;color:var(--navy);margin-bottom:4px}.agenda-time{display:inline-block;background:#fff1b8;color:#6e5200;border-radius:7px;padding:3px 7px;font-size:12px;font-weight:700;margin-top:5px}.agenda-item h3{font-size:15px;line-height:1.4;margin:0 0 4px;color:var(--navy)}.agenda-item p{margin:0;color:var(--muted);font-size:13px}.status{font-size:11px;font-weight:700;color:var(--green);background:#e6f5ee;border-radius:8px;padding:5px 8px;white-space:nowrap}
+    .panel{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.panel-pad{padding:20px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.profile-card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}.profile-card h3{font-family:"Playfair Display",Georgia,serif;font-size:22px;color:var(--navy);margin:0 0 12px}.profile-card dl{display:grid;grid-template-columns:135px 1fr;gap:8px 12px;margin:0;font-size:13px}.profile-card dt{color:var(--muted)}.profile-card dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+    .committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.committee-item{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden}.committee-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-weight:700;color:var(--navy);font-size:14px}.committee-item summary::-webkit-details-marker{display:none}.committee-item summary:after{content:"＋";font-size:19px;color:var(--gold);line-height:1}.committee-item[open] summary:after{content:"−"}.committee-item .people{padding:0 16px 15px;color:#495565;font-size:13px;white-space:pre-line}.committee-item .people p{margin:0}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:white}table{width:100%;border-collapse:collapse;min-width:620px;font-size:13px}th{background:var(--navy);color:white;text-align:left;font-size:12px;letter-spacing:.02em;padding:12px 13px;position:sticky;top:0}td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:#fafbfd}tbody tr:last-child td{border-bottom:0}.subnote{color:var(--muted);font-size:12px;margin:10px 0 0}.vendor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.vendor{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:5px}.vendor .vcat{font-size:11px;color:#8a6500;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.vendor strong{color:var(--navy);font-size:15px}.vendor a{margin-top:6px;color:var(--green);text-decoration:none;font-weight:700;font-size:13px;overflow-wrap:anywhere}.vendor a:hover{text-decoration:underline}
+    .notice{border-left:4px solid var(--gold);background:#fff9df;border-radius:0 12px 12px 0;padding:13px 15px;color:#5c4a13;font-size:13px}.checklist{display:grid;gap:10px}.check{display:flex;gap:10px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}.check input{accent-color:var(--green);width:18px;height:18px;margin-top:2px;flex:0 0 auto}.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+    .footer{background:var(--navy);color:#dbe2eb;padding:26px 20px;text-align:center;font-size:12px}.footer strong{color:var(--gold2)}.backtop{position:fixed;right:18px;bottom:18px;z-index:10;width:45px;height:45px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);font-size:20px;font-weight:700;box-shadow:0 5px 18px #0002;cursor:pointer}
+    .empty{display:none;padding:20px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:12px}.hidden{display:none!important}
+
+    /* Interaksi hover/focus konsisten dengan tema biru-kuning */
+    .quick-card,.agenda-item,.profile-card,.committee-item,.vendor,.check,.panel{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background-color .18s ease}
+    .quick-card:hover,.agenda-item:hover,.profile-card:hover,.committee-item:hover,.vendor:hover,.check:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 12px 26px rgba(18,59,112,.12)}
+    .committee-item summary:hover,.committee-item summary:focus-visible{background:#fff8d8;outline:none}
+    .navlinks a:hover,.navlinks a:focus-visible{background:var(--gold);color:var(--navy);outline:none}
+    .btn-gold:hover,.backtop:hover{background:#ffdf62;box-shadow:0 7px 20px #0002}
+    .vendor a:hover{color:var(--navy)}
+    .status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;border-radius:999px;padding:6px 10px;white-space:nowrap;border:1px solid transparent}
+    .status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+    .status.done{color:#176b45;background:#e5f6ec;border-color:#c3e8d1}
+    .status.progress{color:#7a5200;background:#fff0b3;border-color:#f2d568}
+    .status.upcoming{color:#174e91;background:#e9f2ff;border-color:#c9def9}
+    .agenda-item:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #f2c23030}
+    :focus-visible{outline:3px solid #f2c230;outline-offset:2px}
+
+    @media(max-width:900px){.navlinks{gap:0}.navlinks a{padding:8px 7px;font-size:12px}.hero-inner{grid-template-columns:1fr .55fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.vendor-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){body{font-size:15px}.navwrap{padding:8px 14px}.brand img{width:40px;height:40px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:58px;left:10px;right:10px;margin:0;background:var(--navy);border:1px solid #ffffff22;border-radius:14px;padding:8px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{font-size:14px;padding:11px 12px}.hero-inner{grid-template-columns:1fr;padding:32px 18px 30px;gap:22px}.hero h1{font-size:38px}.hero-mark{display:none}.wrap{padding:20px 14px 42px}.quick-grid{gap:9px}.quick-card{padding:13px}.quick-card strong{font-size:13px}.section{margin-top:29px}.section-head{align-items:stretch;flex-direction:column}.searchbox{max-width:none}.agenda-item{grid-template-columns:88px 1fr;gap:10px;padding:13px}.agenda-item .status{grid-column:2;justify-self:start}.agenda-date strong{font-size:14px}.agenda-item h3{font-size:14px}.two-col,.committee-grid{grid-template-columns:1fr}.profile-card{padding:16px}.profile-card dl{grid-template-columns:110px 1fr;gap:7px 9px;font-size:12px}.vendor-grid{grid-template-columns:1fr 1fr;gap:9px}.vendor{padding:13px}.vendor strong{font-size:14px}.vendor a{font-size:12px}.section-head h2{font-size:27px}.panel-pad{padding:14px}.tag{align-self:flex-start}}
+    @media(max-width:390px){.vendor-grid{grid-template-columns:1fr}.quick-card .qicon{width:31px;height:31px}.agenda-item{grid-template-columns:1fr}.agenda-item .status{grid-column:1}.agenda-date{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.agenda-date strong{margin:0}.profile-card dl{grid-template-columns:1fr;gap:2px}.profile-card dd{margin-bottom:7px}}
+    @media print{.topbar,.hero-actions,.searchbox,.backtop,.footer{display:none!important}body{background:white;font-size:11px}.hero{background:white;color:var(--navy);border-bottom:2px solid var(--gold)}.hero p{color:var(--muted)}.hero-inner{display:block;padding:20px}.hero-mark{display:none}.wrap{max-width:none;padding:10px}.quick-grid{margin-top:10px}.quick-card,.panel,.profile-card,.vendor,.agenda-item{box-shadow:none;break-inside:avoid}.section{break-inside:avoid}.committee-item{break-inside:avoid}.committee-item .people{display:block!important}a{text-decoration:none}.table-wrap{overflow:visible}table{min-width:0;font-size:9px}th,td{padding:6px}.vendor-grid{grid-template-columns:repeat(3,1fr)}}
+  </style>
 </head>
 <body>
-<div class="shell">
-<header class="hero">
-<img src="assets/logo-tiwi-alif.png" alt="Monogram Tiwi dan Alif">
-<div><div class="eyebrow">Wedding Committee Dashboard</div><h1>Panitia Manten<br>Tiwi &amp; Alif</h1><p>Ruang koordinasi, agenda, rundown, dan progres persiapan pernikahan.</p><div class="date">♡ 8 November 2026 · Jogonalan Kidul, Bantul</div></div>
+<header class="topbar">
+  <div class="navwrap">
+    <a class="brand" href="#beranda" aria-label="Beranda Panitia Tiwi dan Alif">
+      <img src="assets/logo-ta.png" alt="Logo T&A">
+      <span class="brandtext"><strong>PANITIA TIWI & ALIF</strong><span>Walimatul Ursy • 2026</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+    <nav class="navlinks" id="navlinks" aria-label="Navigasi utama">
+      <a href="#agenda">Agenda</a><a href="#pengantin">Pengantin</a><a href="#panitia">Panitia</a><a href="#rundown">Rundown</a><a href="#vendor">Vendor</a>
+    </nav>
+  </div>
 </header>
-<nav class="nav" aria-label="Navigasi utama">
-<button class="active" data-view="dashboard">Ringkasan</button><button data-view="agenda">Agenda</button><button data-view="rundown">Rundown Detail</button><button data-view="panitia">Kepanitiaan</button><button data-view="progres">Update Progres</button><button data-view="layout">Layout</button><button data-view="data">Kelola Data</button>
-</nav>
-<main>
-<section id="dashboard" class="view active">
-<div class="section-head"><div><h2>Ringkasan Persiapan</h2><p>Pantau status persiapan dari satu halaman.</p></div><span class="pill" id="syncStatus">Mode lokal</span></div>
-<div class="grid">
-<div class="stat"><span class="label">Total Agenda</span><strong id="statAgenda">11</strong><small>Jadwal persiapan & hari-H</small></div>
-<div class="stat"><span class="label">Agenda Selesai</span><strong id="statDone">1</strong><small id="statDoneSub">Rapat pembentukan panitia</small></div>
-<div class="stat"><span class="label">Progres Tugas</span><strong id="statProgress">9%</strong><small id="statProgressSub">Dari pembaruan panitia</small></div>
-<div class="stat"><span class="label">Seksi / Peran</span><strong id="statRoles">33</strong><small>Susunan panitia dan vendor</small></div>
-</div>
-<div class="two-col" style="margin-top:16px">
-<div class="panel"><h3>Progres keseluruhan</h3><div style="display:flex;justify-content:space-between;gap:10px"><b id="progressText">1 dari 11 agenda selesai</b><span class="muted" id="progressPct">9%</span></div><div class="progress-line"><span id="progressBar" style="width:9%"></span></div><p class="muted" style="font-size:12px;margin:0">Status mengikuti tanggal secara otomatis: tanggal terlewati menjadi Selesai, tanggal hari ini menjadi On Progress, dan tanggal mendatang menjadi Belum. Status Selesai yang ditandai manual tetap dipertahankan.</p></div>
-<div class="panel"><h3>Agenda terdekat</h3><div id="nextAgenda" class="quick-list"></div></div>
-</div>
-<div class="section-head"><div><h2>Informasi Utama</h2><p>Data inti acara pernikahan.</p></div></div>
-<div class="grid">
-<div class="panel"><span class="eyebrow">Mempelai Putri</span><h3 style="margin:7px 0 3px">Anggraini Nur Pertiwi</h3><p class="muted" style="margin:0;font-size:12px">Putri Bpk. Supomo &amp; Ibu Rubinem, S.Pd.</p></div>
-<div class="panel"><span class="eyebrow">Mempelai Putra</span><h3 style="margin:7px 0 3px">Muhammad Alif Asy’ari</h3><p class="muted" style="margin:0;font-size:12px">Putra Bpk. Agus Subchi, S.E. &amp; Ibu Istinah</p></div>
-<div class="panel"><span class="eyebrow">Lokasi</span><h3 style="margin:7px 0 3px">Jogonalan Kidul</h3><p class="muted" style="margin:0;font-size:12px">RT 05, Tirtonirmolo, Kasihan, Bantul</p></div>
-<div class="panel"><span class="eyebrow">Koordinasi</span><h3 style="margin:7px 0 3px">Anjar Gigih Dewanto</h3><p class="muted" style="margin:0;font-size:12px">Sekretaris / Koordinator Keluarga CPW</p></div>
-</div>
-</section>
-<section id="agenda" class="view">
-<div class="section-head"><div><h2>Agenda Panitia</h2><p>Ubah status agenda sesuai perkembangan di lapangan.</p></div><button class="btn btn-primary" id="addAgendaBtn">＋ Tambah agenda</button></div>
-<div class="toolbar"><input id="agendaSearch" placeholder="Cari agenda atau tanggal…"><select id="agendaFilter"><option value="all">Semua status</option><option value="Selesai">Selesai</option><option value="Berjalan">On Progress</option><option value="Belum">Belum dimulai</option></select></div>
-<div id="agendaList" class="agenda-list"></div>
-</section>
-<section id="rundown" class="view">
-<div class="section-head"><div><h2>Rundown Detail Hari-H</h2><p>Rincian seserahan, akad nikah, dan resepsi berdasarkan dokumen acara.</p></div></div>
-<div class="panel" style="margin-bottom:14px"><h3>Seserahan &amp; Akad Nikah · Minggu, 8 November 2026</h3><div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Agenda</th><th>Petugas</th><th>Keterangan</th></tr></thead><tbody id="akadRows"></tbody></table></div></div>
-<div class="panel"><h3>Resepsi Pernikahan · Minggu, 8 November 2026</h3><div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Agenda</th><th>Petugas</th><th>Keterangan</th></tr></thead><tbody id="resepsiRows"></tbody></table></div></div>
-</section>
-<section id="panitia" class="view">
-<div class="section-head"><div><h2>Susunan Kepanitiaan</h2><p>Daftar seksi, koordinator, anggota, dan vendor.</p></div><button class="btn" id="exportPeople">Ekspor daftar</button></div>
-<div class="toolbar"><input id="peopleSearch" placeholder="Cari nama, seksi, atau vendor…"><select id="peopleFilter"><option value="all">Semua seksi</option></select></div><div id="peopleCards" class="cards"></div>
-</section>
-<section id="progres" class="view">
-<div class="section-head"><div><h2>Update Progres &amp; Catatan</h2><p>Catat hambatan, kebutuhan, keputusan, dan tindak lanjut.</p></div><button class="btn btn-primary" id="addUpdateBtn">＋ Catat update</button></div>
-<div class="note">Agar seluruh panitia melihat pembaruan yang sama dari perangkat berbeda, hubungkan aplikasi ke Supabase melalui menu Kelola Data. Tanpa konfigurasi tersebut, data tersimpan di browser masing-masing.</div>
-<div id="updatesList" class="task-list"></div>
-</section>
-<section id="layout" class="view">
-<div class="section-head"><div><h2>Layout Lokasi</h2><p>Area ini sengaja dikosongkan untuk gambar layout yang akan diunggah kemudian.</p></div></div>
-<div class="empty-layout"><div><strong>Area Gambar Layout</strong><p>Unggah denah atau gambar layout acara ketika sudah siap.<br>Bagian ini belum diisi sesuai permintaan.</p></div></div>
-</section>
-<section id="data" class="view">
-<div class="section-head"><div><h2>Kelola Data &amp; Sinkronisasi</h2><p>Cadangkan data atau aktifkan sinkronisasi online antarperangkat.</p></div></div>
-<div class="two-col">
-<div class="panel"><h3>Cadangkan data</h3><p class="muted" style="font-size:13px">Ekspor agenda, status, dan catatan progres menjadi file JSON. File ini dapat diimpor di browser panitia lain untuk menyalin pembaruan.</p><div class="toolbar"><button class="btn btn-primary" id="exportData">Unduh cadangan JSON</button><label class="btn" for="importFile">Impor cadangan</label><input class="hide" type="file" id="importFile" accept="application/json"></div><button class="btn btn-danger" id="resetData">Reset data ke awal</button></div>
-<div class="panel"><h3>Sinkronisasi bersama (opsional)</h3><p class="muted" style="font-size:13px">GitHub Pages hanya menyajikan website statis. Untuk update bersama secara online, gunakan proyek Supabase gratis dan masukkan URL serta anon key di bawah ini.</p><div class="field"><label for="sbUrl">Supabase Project URL</label><input id="sbUrl" placeholder="https://xxxx.supabase.co"></div><div class="field"><label for="sbKey">Supabase anon/public key</label><input id="sbKey" placeholder="sb_publishable_… atau anon key"></div><button class="btn btn-primary" id="saveSupabase">Simpan konfigurasi</button><p class="muted" style="font-size:11px;margin-bottom:0">Jangan pernah memasukkan service_role key di website publik. Petunjuk setup ada di README.md.</p></div>
-</div>
-<div class="panel" style="margin-top:14px"><h3>Data acara</h3><p class="muted" style="font-size:13px">Mempelai: Anggraini Nur Pertiwi &amp; Muhammad Alif Asy’ari · Tanggal utama: Minggu, 8 November 2026 · Warna tema: pink pastel dan putih.</p></div>
-</section>
+<main id="beranda">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Panduan Digital Panitia</div>
+        <h1>Tiwi <span>&</span> Alif</h1>
+        <p>Semua informasi penting acara dalam satu tempat. Temukan agenda, pembagian tugas, rundown, dan kontak vendor dengan cepat melalui ponsel maupun komputer.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#agenda">▦ Lihat Agenda</a>
+          <button class="btn btn-light" onclick="window.print()">⎙ Cetak / Simpan PDF</button>
+        </div>
+      </div>
+      <div class="hero-mark"><img src="assets/logo-ta.png" alt="Monogram pernikahan Tiwi dan Alif"></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <section class="quick-grid" aria-label="Informasi ringkas">
+      <div class="quick-card"><div class="qicon">♡</div><strong>Tiwi & Alif</strong><span>Anggraini Nur Pertiwi & Muhammad Alif Asy’ari</span></div>
+      <div class="quick-card"><div class="qicon">▦</div><strong>Minggu, 8 November 2026</strong><span>Hari utama pernikahan</span></div>
+      <div class="quick-card"><div class="qicon">⌖</div><strong>Jogonalan Kidul RT 05</strong><span>Tirtonirmolo, Kasihan, Bantul</span></div>
+      <div class="quick-card"><div class="qicon">✓</div><strong>Koordinasi Panitia</strong><span>Agenda dan tugas tersusun</span></div>
+    </section>
+
+    <section class="section" id="agenda">
+      <div class="section-head"><div><span class="tag">Jadwal kerja</span><h2>Agenda Kegiatan</h2><p>Jadwal utama panitia. Status berubah otomatis berdasarkan tanggal dan jam perangkat: Akan Datang, On Progress, atau Selesai / Done.</p></div><label class="searchbox">⌕ <input id="agendaSearch" type="search" placeholder="Cari agenda atau tanggal…" aria-label="Cari agenda"></label></div>
+      <div class="agenda-list" id="agendaList">
+        <article class="agenda-item searchable" data-date="2026-10-17" data-start="19:30" data-end="21:30"><div class="agenda-date"><strong>Sabtu</strong>17 Oktober 2026<div class="agenda-time">19.30 WIB</div></div><div><h3>Rapat Pembentukan Panitia</h3><p>Koordinasi awal dan pembagian tugas panitia.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-01" data-start="07:30" data-end="12:00"><div class="agenda-date"><strong>Minggu</strong>1 November 2026<div class="agenda-time">07.30 WIB</div></div><div><h3>Kerja Bakti I</h3><p>Pasang tenda untuk dapur/patehan sekaligus mencari bambu untuk persiapan tarub.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-03" data-start="08:00" data-end="12:00"><div class="agenda-date"><strong>Selasa</strong>3 November 2026<div class="agenda-time">08.00 WIB</div></div><div><h3>Pemasangan Tenda oleh Vendor</h3><p>Koordinasi lokasi dan akses kerja dengan pihak vendor tenda.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-05" data-start="06:00" data-end="18:00"><div class="agenda-date"><strong>Kamis</strong>5 November 2026<div class="agenda-time">06.00 WIB</div></div><div><h3>Mulai Memasak</h3><p>Persiapan konsumsi dan kebutuhan dapur.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-06" data-start="07:30" data-end="12:00"><div class="agenda-date"><strong>Jumat</strong>6 November 2026<div class="agenda-time">07.30 WIB</div></div><div><h3>Tarub & Dodol Dawet</h3><p>Persiapan tarub dan kegiatan dodol dawet.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-06" data-start="15:00" data-end="16:30"><div class="agenda-date"><strong>Jumat</strong>6 November 2026<div class="agenda-time">15.00 WIB</div></div><div><h3>Menata Kursi untuk Kenduri</h3><p>Penataan kursi dan tempat sebelum acara kenduri.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-06" data-start="16:30" data-end="18:00"><div class="agenda-date"><strong>Jumat</strong>6 November 2026<div class="agenda-time">16.30 WIB</div></div><div><h3>Kenduri</h3><p>Doa bersama dan kenduri.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-06" data-start="20:00" data-end="23:00"><div class="agenda-date"><strong>Jumat</strong>6 November 2026<div class="agenda-time">20.00 WIB</div></div><div><h3>Malam Midodareni</h3><p>Koordinasi sinoman, patehan, masak, dan kembar mayang.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-07" data-start="20:00" data-end="21:30"><div class="agenda-date"><strong>Sabtu</strong>7 November 2026<div class="agenda-time">20.00 WIB</div></div><div><h3>Cek Layout</h3><p>Pengecekan akhir area seserahan dan akad nikah.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-08" data-start="07:30" data-end="11:30"><div class="agenda-date"><strong>Minggu</strong>8 November 2026<div class="agenda-time">07.30–11.30 WIB</div></div><div><h3>Seserahan & Akad Nikah</h3><p>Lokasi: Jogonalan Kidul RT 05, Tirtonirmolo, Kasihan, Bantul.</p></div><span class="status auto-status">Memuat status…</span></article>
+        <article class="agenda-item searchable" data-date="2026-11-08" data-start="18:30" data-end="21:30"><div class="agenda-date"><strong>Minggu</strong>8 November 2026<div class="agenda-time">18.30–21.30 WIB</div></div><div><h3>Resepsi Pernikahan</h3><p>Acara resepsi dan ramah tamah bersama para tamu.</p></div><span class="status auto-status">Memuat status…</span></article>
+      </div>
+      <div class="empty" id="agendaEmpty">Agenda tidak ditemukan. Coba kata kunci lain.</div>
+      <p class="subnote">Catatan: rundown detail di bawah mempertahankan jam dari dokumen sumber. Jika berbeda dengan agenda utama, mohon konfirmasi jam final kepada keluarga dan HNP Wedding Organizer.</p>
+    </section>
+
+    <section class="section" id="pengantin">
+      <div class="section-head"><div><span class="tag">Informasi keluarga</span><h2>Profil Pengantin</h2><p>Informasi ringkas kedua mempelai.</p></div></div>
+      <div class="two-col">
+        <article class="profile-card"><h3>Anggraini Nur Pertiwi</h3><dl>
+          <dt>Nama lengkap</dt><dd>Anggraini Nur Pertiwi, A.Md. Farm.</dd><dt>Tempat, tanggal lahir</dt><dd>Bantul, 11 November 1999</dd><dt>Pendidikan</dt><dd>D3 Farmasi</dd><dt>Pekerjaan</dt><dd>Tenaga Teknis Kefarmasian</dd><dt>Ayah</dt><dd>Supomo</dd><dt>Ibu</dt><dd>Rubinem, S.Pd.</dd><dt>Saudara</dt><dd>Anggit Krisprabowo; Agni Sufya Mukti; Anjar Gigih Dewanto</dd><dt>Alamat</dt><dd>Jogonalan Kidul RT 05, Tirtonirmolo, Kasihan, Bantul</dd>
+        </dl></article>
+        <article class="profile-card"><h3>Muhammad Alif Asy’ari</h3><dl>
+          <dt>Nama lengkap</dt><dd>Muhammad Alif Asy’ari, S.Ds.</dd><dt>Tempat, tanggal lahir</dt><dd>Yogyakarta, 21 Juli 2000</dd><dt>Pendidikan</dt><dd>S1 Desain Komunikasi Visual</dd><dt>Pekerjaan</dt><dd>Wiraswasta</dd><dt>Ayah</dt><dd>Agus Subchi, S.E.</dd><dt>Ibu</dt><dd>Istinah</dd><dt>Saudara</dt><dd>—</dd><dt>Alamat</dt><dd>Jogonalan Kidul RT 02, Tirtonirmolo, Kasihan, Bantul</dd>
+        </dl></article>
+      </div>
+    </section>
+
+    <section class="section" id="panitia">
+      <div class="section-head"><div><span class="tag">Organisasi & pembagian tugas</span><h2>Susunan Panitia</h2><p>Tekan setiap bagian untuk membuka atau menutup daftar petugas.</p></div><label class="searchbox">⌕ <input id="committeeSearch" type="search" placeholder="Cari seksi atau nama…" aria-label="Cari susunan panitia"></label></div>
+      <div class="committee-grid" id="committeeGrid">
+        <details class="committee-item searchable" open><summary>Pemangku Hajat</summary><div class="people">Bpk. Supomo & Ibu Rubinem</div></details>
+        <details class="committee-item searchable"><summary>Penasehat</summary><div class="people">1. Bpk. Mugiyono T.S.\n2. Bpk. Agus Marwanto (Ketua RT 05)</div></details>
+        <details class="committee-item searchable"><summary>Ketua</summary><div class="people">1. Bpk. Agus Joko Nugroho\n2. Bpk. Eko Puji Slameto</div></details>
+        <details class="committee-item searchable"><summary>Sekretaris</summary><div class="people">Bpk. Anjar Gigih Dewanto</div></details>
+        <details class="committee-item searchable"><summary>Perlengkapan</summary><div class="people">Koordinator: Bpk. Yogo\nBpk. Sumarjo; Bpk. Ediyarto; Bpk. Sarjiyanto; Bpk. Subardi; Bpk. Agus S.B.; Bpk. Sudariyanto; Bpk. Ponco; Bpk. Prayoko; Sdr. Banjari; Sdr. Giyanto</div></details>
+        <details class="committee-item searchable"><summary>Tarub</summary><div class="people">Koordinator: Bpk. Suparno\nBpk. Ngadiman; Bpk. Supri; Bpk. H. Muhammad Farid; Bpk. Ahmad Basuki; Bpk. Suyudi; Bpk. Suparmin; Bpk. Mujiono; Bpk. M. Amri</div></details>
+        <details class="committee-item searchable"><summary>Penerangan / Listrik</summary><div class="people">Koordinator: Bpk. Sudarmanto\nBpk. Toton Linawan; Sdr. Danang</div></details>
+        <details class="committee-item searchable"><summary>Keamanan & Parkir</summary><div class="people">Koordinator: Bpk. Surasto\nBpk. Sukardi; Bpk. Dwi Santoso; Bpk. Fajar S.P.; Bpk. M. Ali; Bpk. Siyamto</div></details>
+        <details class="committee-item searchable"><summary>Kembar Mayang</summary><div class="people">Bpk. Marsudi Trigono</div></details>
+        <details class="committee-item searchable"><summary>Pencari Daun Tarub</summary><div class="people">Koordinator: Bpk. Eko Waljiyanto\nBpk. Adi Hendratmo; Bpk. Junianto; Sdr. Joko Purwanto; Sdr. Purnomo</div></details>
+        <details class="committee-item searchable"><summary>Patehan</summary><div class="people">Bpk. Kodrat Slamet; Bpk. Mas Udi</div></details>
+        <details class="committee-item searchable"><summary>Pengedar Undangan</summary><div class="people">Sdr. Joko Purwanto; Sdr. Aditama Mu’arif; Sdr. Abi Oktavian</div></details>
+        <details class="committee-item searchable"><summary>Pengawas Konsumsi / Catering</summary><div class="people">Koordinator: Ibu Endarwati\nIbu Desi; Ibu Supriati; Rhizky Catering (vendor)</div></details>
+        <details class="committee-item searchable"><summary>Penghubung Tamu</summary><div class="people">Ibu Supriyanti; Ibu Fina; Sdri. Tri Wijayanti</div></details>
+        <details class="committee-item searchable"><summary>Among Tamu</summary><div class="people">Bpk. Agus Marwanto Sekalian; Bpk. Jamroni Sekalian; Bpk. Jadi Kuswanto Sekalian; Bpk. Anggit Sekalian; Bpk. Reza Sekalian</div></details>
+        <details class="committee-item searchable"><summary>Sinoman</summary><div class="people">Koordinator: Ivan Aridwiyanto\nAbi Oktavian; Angga Manta Aji; Agus Rismanto; Aditama Mu’arif; Yusuf; Amin\nPenugasan: 6 November 2026 – Malam Midodareni</div></details>
+        <details class="committee-item searchable"><summary>Masak</summary><div class="people">Koordinator: Ibu Suparno\nIbu Suprihatin; Ibu Par Eko; Ibu Yulianti; Ibu Tri Supriyanti; Ibu Hj. Triningsih Handayani; Ibu Janti; Ibu Fina; Ibu Erni; Ibu Boniyem; Ibu Lia; Ibu Naning</div></details>
+        <details class="committee-item searchable"><summary>Adang</summary><div class="people">Ibu Atun; Ibu Suratini; Ibu Paijem Walijo</div></details>
+        <details class="committee-item searchable"><summary>Sound System</summary><div class="people">Bpk. Irun (vendor)</div></details>
+        <details class="committee-item searchable"><summary>Koordinator Acara</summary><div class="people">HNP Wedding Organizer</div></details>
+        <details class="committee-item searchable"><summary>Koordinator Keluarga CPW</summary><div class="people">Bpk. Anjar Gigih Dewanto</div></details>
+        <details class="committee-item searchable"><summary>Koordinator Keluarga CPP</summary><div class="people">Bpk. Jasmono</div></details>
+        <details class="committee-item searchable"><summary>MC Akad & Seserahan</summary><div class="people">Bpk. Supoyo</div></details>
+        <details class="committee-item searchable"><summary>MC Resepsi</summary><div class="people">Hady Nugroho (pihak W.O.)</div></details>
+        <details class="committee-item searchable"><summary>Seksi Acara Seserahan & Akad Nikah</summary><div class="people">Petugas KUA, khutbah nikah, dan doa: KUA Kapanewon Kasihan\nKalam Illahi: Bpk. Ardison\nWali nikah: Bpk. Supomo\nSaksi CPW: Bpk. Agus Paryanto\nAtur Pambagyaharja: Bpk. Slamet Raharjo\nAtur Panampi CPW: Bpk. Muh Adab (Bpk. Dukuh)\nPendamping CPW: Ibu Agni Sufya Mukti & Ibu Kuswanti\nPendamping CPP: orang tua CPP\nPengatur kursi/layout: HNP Wedding Organizer\nPengamanan buku nikah: Bpk. Anjar Gigih Dewanto\nSaksi CPP dan Atur Pasrah CPP belum diisi pada dokumen sumber.</div></details>
+        <details class="committee-item searchable"><summary>Dekorasi</summary><div class="people">Bpk. Yudi (vendor). Daftar vendor mencantumkan Tekun Tekan Dekorasi.</div></details>
+        <details class="committee-item searchable"><summary>Kotak Tali Asih</summary><div class="people">Penanggung jawab: Ibu Sudarni</div></details>
+        <details class="committee-item searchable"><summary>Seserahan</summary><div class="people">Penanggung jawab: Bpk. Anjar Gigih Dewanto & W.O.</div></details>
+        <details class="committee-item searchable"><summary>Buku Tamu / Souvenir</summary><div class="people">Afna; Naila; Alin; Aisyah</div></details>
+        <details class="committee-item searchable"><summary>Hiburan</summary><div class="people">HNP Band</div></details>
+        <details class="committee-item searchable"><summary>Dokumentasi</summary><div class="people">Photo & Video: Tepi Senja Photography\nPhotobooth: Askala Photobooth\nWedding Content Creator: Memorybloom</div></details>
+        <details class="committee-item searchable"><summary>Make Up</summary><div class="people">Pengantin & orang tua: Itsnrn Make Up\nKeluarga: Kurnia Beauty</div></details>
+        <details class="committee-item searchable"><summary>Busana</summary><div class="people">Titus Tire Jogja (susunan panitia); daftar vendor menyebut Titus Attire.</div></details>
+        <details class="committee-item searchable"><summary>Pembawa Kembar Mayang</summary><div class="people">Ibu Endarwati; Ibu Tri Agustina; Ibu Yulianti; Ibu Hj. Yuli Farid</div></details>
+      </div>
+      <div class="empty" id="committeeEmpty">Data panitia tidak ditemukan.</div>
+    </section>
+
+    <section class="section" id="rundown">
+      <div class="section-head"><div><span class="tag">Hari-H</span><h2>Rundown Acara</h2><p>Jam detail mengikuti rundown pada dokumen panitia sumber.</p></div></div>
+      <div class="notice">Perhatian: jam pada agenda utama yang baru ditambahkan berbeda dengan beberapa jam pada rundown sumber. Gunakan bagian ini sebagai referensi terperinci dan konfirmasikan versi final kepada keluarga serta WO.</div>
+      <h3 style="color:var(--navy);margin:22px 0 10px">Seserahan & Akad Nikah — Minggu, 8 November 2026</h3>
+      <div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Acara</th><th>Petugas / Pihak Terkait</th><th>Catatan</th></tr></thead><tbody>
+        <tr><td>05.30</td><td>Make up CPW</td><td>Itsnrn MUA</td><td>Kediaman mempelai wanita</td></tr>
+        <tr><td>06.00</td><td>Make up Ibu CPW & CPP</td><td>Itsnrn MUA</td><td></td></tr>
+        <tr><td>07.30</td><td>Make up & ganti busana CPP</td><td>Itsnrn MUA</td><td>Robes session</td></tr>
+        <tr><td>08.30</td><td>Beauty shoot</td><td>Tepi Senja Photography</td><td></td></tr>
+        <tr><td>08.30</td><td>Keluarga CPW menuju area akad & seserahan</td><td>Sdr. Anjar Gigih Dewanto</td><td></td></tr>
+        <tr><td>08.45</td><td>Keluarga CPP tiba di area seserahan & akad</td><td>Bpk. Jasmono</td><td></td></tr>
+        <tr><td>08.55</td><td>Kirab keluarga CPP / prosesi seserahan</td><td>HNP WO</td><td></td></tr>
+        <tr><td>09.00–09.05</td><td>MC membuka acara</td><td>MC Bpk. Supoyo</td><td></td></tr>
+        <tr><td>09.05–09.10</td><td>Atur Pambagyoharjo</td><td>Bpk. Slamet Raharjo</td><td></td></tr>
+        <tr><td>09.10–09.20</td><td>Jeda & pembagian snack</td><td>Rhizky Catering & HNP WO</td><td>Snack + teh hangat</td></tr>
+        <tr><td>09.10–09.30</td><td>Serah terima CPP untuk acara seserahan</td><td>Wakil keluarga CPP (belum dicantumkan) & Bpk. Muh Adab</td><td>Dilanjutkan penyerahan pisang sanggan</td></tr>
+        <tr><td>09.30–09.35</td><td>Penyerahan simbolis seserahan</td><td>Ibu CPP ke Ibu CPW; Ayah CPP ke Ayah CPW</td><td>2 item seserahan</td></tr>
+        <tr><td>09.35–10.00</td><td>CPP, CPW, wali, saksi & pembaca Al-Qur’an duduk di area akad</td><td>Wali: Bpk. Supomo; Saksi CPW: Bpk. Agus Paryanto; Pembaca: Bpk. Ardison; pendamping: Agni & Wanti</td><td>Nama saksi CPP belum diisi; saksi membawa KTP asli</td></tr>
+        <tr><td>10.00–10.30</td><td>Prosesi akad nikah</td><td>KUA Kapanewon Kasihan</td><td></td></tr>
+        <tr><td>10.30–10.40</td><td>Penyerahan mahar, penyematan cincin & foto keluarga inti</td><td>MC, HNP WO & Tepi Senja Photography</td><td></td></tr>
+        <tr><td>10.40–11.00</td><td>Kepyok kembar mayang & sungkeman</td><td>MC, HNP WO & Tepi Senja Photography</td><td>Pengantin & orang tua</td></tr>
+        <tr><td>11.00–11.30</td><td>Acara selesai; hidangan akad</td><td>MC, HNP WO & Tepi Senja Photography</td><td>Piring terbang; beauty shoot dengan buku nikah</td></tr>
+        <tr><td>11.30–11.55</td><td>Tamu mengucapkan selamat & berfoto dengan pengantin</td><td>HNP WO & Tepi Senja Photography</td><td></td></tr>
+        <tr><td>11.55–12.00</td><td>MC menutup acara seserahan & akad nikah</td><td>MC Bpk. Supoyo</td><td></td></tr>
+      </tbody></table></div>
+      <h3 style="color:var(--navy);margin:24px 0 10px">Resepsi Pernikahan — Minggu, 8 November 2026</h3>
+      <div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Acara</th><th>Petugas / Pihak Terkait</th></tr></thead><tbody>
+        <tr><td>14.00</td><td>Retouch pengantin wanita</td><td>Itsnrn MUA</td></tr>
+        <tr><td>14.00</td><td>Make up among tamu & buku tamu putri</td><td>Kurnia Beauty</td></tr>
+        <tr><td>16.30</td><td>Ganti busana pengantin pria</td><td>Itsnrn MUA</td></tr>
+        <tr><td>17.00</td><td>Ganti busana among tamu putra</td><td>Kurnia Beauty</td></tr>
+        <tr><td>17.00–18.00</td><td>Beauty shoot look resepsi</td><td>Tepi Senja Photography</td></tr>
+        <tr><td>18.00</td><td>Keluarga CPW & CPP tiba di area resepsi</td><td>Sdr. Anjar Gigih Dewanto</td></tr>
+        <tr><td>18.00–18.45</td><td>Foto bersama keluarga & panitia</td><td>HNP WO & Tepi Senja Photography</td></tr>
+        <tr><td>18.45–18.55</td><td>Prosesi kirab saxophone</td><td>HNP WO & HNP Band</td></tr>
+        <tr><td>18.55–19.00</td><td>Pembukaan acara resepsi</td><td>MC Hady Nugroho</td></tr>
+        <tr><td>19.00</td><td>Tamu mengucapkan selamat, berfoto, menikmati buffet & stall</td><td>MC, HNP WO, HNP Band, Rhizky Catering, Tepi Senja, Memorybloom & Askala</td></tr>
+        <tr><td>19.00–20.45</td><td>Acara berjalan, lagu-lagu & foto-foto</td><td>MC, HNP WO, HNP Band, catering & dokumentasi</td></tr>
+        <tr><td>20.45–20.55</td><td>Lempar hand bouquet</td><td>HNP WO & MC</td></tr>
+        <tr><td>20.55–21.00</td><td>Mempelai turun & MC menutup acara</td><td>MC Hady Nugroho; flashmob</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" id="layout">
+      <div class="section-head"><div><span class="tag">Penataan lokasi</span><h2>Layout Area Acara</h2><p>Skema sederhana berdasarkan label layout di dokumen sumber.</p></div></div>
+      <div class="panel panel-pad">
+        <div style="display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;text-align:center">
+          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">KELUARGA CPP</div>
+          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">AREA TENGAH / ACARA</div>
+          <div style="padding:18px 8px;background:#123b70;color:white;border-radius:10px;font-size:12px;font-weight:700">KELUARGA CPW</div>
+          <div></div><div style="padding:18px 8px;background:#fff1b8;color:#6e5200;border-radius:10px;font-size:12px;font-weight:700">AREA CATERING</div><div></div>
+          <div></div><div style="padding:18px 8px;background:#eaf0f7;color:#1c5595;border-radius:10px;font-size:12px;font-weight:700">AREA TAMU / AKSES</div><div></div>
+          <div></div><div style="padding:18px 8px;background:#f2c230;color:#123b70;border-radius:10px;font-size:12px;font-weight:700">PHOTOBOOTH</div><div></div>
+        </div>
+        <p class="subnote">Skema ini bukan gambar berskala. Konfirmasikan posisi akhir di lokasi bersama HNP Wedding Organizer.</p>
+      </div>
+    </section>
+
+    <section class="section" id="vendor">
+      <div class="section-head"><div><span class="tag">Kontak cepat</span><h2>Daftar Vendor</h2><p>Tekan nomor telepon untuk menghubungi vendor melalui ponsel.</p></div><label class="searchbox">⌕ <input id="vendorSearch" type="search" placeholder="Cari vendor atau bidang…" aria-label="Cari vendor"></label></div>
+      <div class="vendor-grid" id="vendorGrid">
+        <article class="vendor searchable"><span class="vcat">Wedding Organizer</span><strong>HNP Wedding Organizer</strong><a href="tel:+6283195279543">☎ +62 831-9527-9543</a></article>
+        <article class="vendor searchable"><span class="vcat">Entertainment</span><strong>HNP Band</strong><a href="tel:+6283195279543">☎ +62 831-9527-9543</a></article>
+        <article class="vendor searchable"><span class="vcat">MC Akad & Seserahan</span><strong>Bpk. Supoyo</strong><a href="tel:+6285643059955">☎ +62 856-4305-9955</a></article>
+        <article class="vendor searchable"><span class="vcat">MC Resepsi</span><strong>Hady Nugroho</strong><a href="tel:+6283195279543">☎ +62 831-9527-9543</a></article>
+        <article class="vendor searchable"><span class="vcat">MUA Pengantin & Orang Tua</span><strong>Itsnrn MUA</strong><a href="tel:+6285700752956">☎ +62 857-0075-2956</a></article>
+        <article class="vendor searchable"><span class="vcat">MUA Keluarga</span><strong>Kurnia Beauty</strong><a href="tel:+6285865629039">☎ +62 858-6562-9039</a></article>
+        <article class="vendor searchable"><span class="vcat">Busana Keluarga</span><strong>Titus Attire</strong><a href="tel:+6285647770200">☎ +62 856-4777-0200</a></article>
+        <article class="vendor searchable"><span class="vcat">Photo & Video</span><strong>Tepi Senja Photography</strong><a href="tel:+6285803783855">☎ +62 858-0378-3855</a></article>
+        <article class="vendor searchable"><span class="vcat">Photobooth</span><strong>Askala Photobooth</strong><a href="tel:+6285179792123">☎ +62 851-7979-2123</a></article>
+        <article class="vendor searchable"><span class="vcat">Wedding Content Creator</span><strong>Memorybloom</strong><a href="tel:+6281228484112">☎ +62 812-2848-4112</a></article>
+        <article class="vendor searchable"><span class="vcat">Catering</span><strong>Rhizky Catering</strong><a href="tel:+6281568881382">☎ +62 815-6881-382</a></article>
+        <article class="vendor searchable"><span class="vcat">Dekorasi</span><strong>Tekun Tekan Dekorasi</strong><a href="tel:+6282133926333">☎ +62 821-3392-6333</a></article>
+        <article class="vendor searchable"><span class="vcat">Tenda</span><strong>Sulis Tenda</strong><a href="tel:+6281328711045">☎ +62 813-2871-1045</a></article>
+      </div>
+      <div class="empty" id="vendorEmpty">Vendor tidak ditemukan.</div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-head"><div><span class="tag">Persiapan akhir</span><h2>Checklist Koordinasi</h2><p>Tandai tugas yang sudah dikonfirmasi selama koordinasi.</p></div></div>
+      <div class="checklist">
+        <label class="check"><input type="checkbox"><span>Konfirmasi jam final seserahan, akad nikah, dan resepsi kepada keluarga serta HNP Wedding Organizer.</span></label>
+        <label class="check"><input type="checkbox"><span>Konfirmasi nama saksi CPP dan wakil keluarga CPP yang belum tercantum.</span></label>
+        <label class="check"><input type="checkbox"><span>Konfirmasi nama vendor dekorasi dan busana karena terdapat perbedaan penulisan di dokumen sumber.</span></label>
+        <label class="check"><input type="checkbox"><span>Pastikan bambu, janur, tarub, tenda, kursi, meja, penerangan, sound system, dan catering terkoordinasi.</span></label>
+        <label class="check"><input type="checkbox"><span>Bagikan jadwal terbaru kepada setiap koordinator seksi dan vendor terkait.</span></label>
+      </div>
+    </section>
+  </div>
 </main>
-<footer class="footer"><span>© 2026 · Panitia Manten Tiwi &amp; Alif</span><span>Website oleh <a href="https://wa.me/6281334748004?text=Halo%20Mr.%20Glempho%2C%20saya%20ingin%20bertanya%20tentang%20website%20Panitia%20Manten." target="_blank" rel="noopener">Mr. Glempho</a> · Order Website via WhatsApp</span></footer>
-</div>
-<div id="toast" class="toast" role="status"></div>
-<div id="modal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><h2 id="modalTitle">Tambah data</h2><form id="modalForm"></form></div></div>
+<footer class="footer"><strong>Tiwi & Alif</strong> · Buku Kerja Digital Panitia<br>Walimatul Ursy · 8 November 2026</footer>
+<button class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">↑</button>
 <script>
-const initialAgenda=[
-{id:1,date:"2026-10-17",time:"19.30 WIB",title:"Rapat Pembentukan Panitia",detail:"Pembentukan panitia, koordinasi, pembagian jobdesk, detail kegiatan, dan pembagian undangan.",location:"Rumah Bp. Supomo",status:"Selesai"},
-{id:2,date:"2026-11-01",time:"07.30 WIB",title:"Kerja Bakti I – Pasang Tenda Dapur & Patehan",detail:"Pasang tenda untuk dapur dan patehan. Sekalian mencari bambu untuk persiapan tarub.",location:"Area rumah / lokasi acara",status:"Belum"},
-{id:3,date:"2026-11-03",time:"08.00 WIB",title:"Pemasangan Tenda oleh Vendor",detail:"Koordinasi kedatangan vendor dan pengecekan pemasangan tenda.",location:"Lokasi acara",status:"Belum"},
-{id:4,date:"2026-11-05",time:"06.00 WIB",title:"Mulai Memasak",detail:"Persiapan dapur dan mulai memasak sesuai pembagian tugas seksi masak.",location:"Dapur / patehan",status:"Belum"},
-{id:5,date:"2026-11-06",time:"07.30 WIB",title:"Tarub & Dodol Dawet",detail:"Persiapan tarub, bambu, janur, tebu, kelapa gading, pisang raja, ron-ronan, serta dodol dawet.",location:"Rumah Bp. Supomo",status:"Belum"},
-{id:6,date:"2026-11-06",time:"15.00 WIB",title:"Menata Kursi Persiapan Kenduri",detail:"Menata kursi, meja, kaum, sound system, dan lampu.",location:"Lokasi acara",status:"Belum"},
-{id:7,date:"2026-11-06",time:"16.30 WIB",title:"Kenduri",detail:"Doa bersama, melibatkan panitia bapak-bapak dan tamu undangan.",location:"Lokasi acara",status:"Belum"},
-{id:8,date:"2026-11-06",time:"20.00 WIB",title:"Malam Midodareni",detail:"Wungon, keroncongan, pembuatan kembar mayang, sinoman, patehan, masak dan adang.",location:"Rumah Bp. Supomo",status:"Belum"},
-{id:9,date:"2026-11-07",time:"20.00 WIB",title:"Cek Layout Seserahan & Akad Nikah",detail:"Pengecekan akhir tata letak dan kesiapan area seserahan serta akad nikah.",location:"Area akad dan seserahan",status:"Belum"},
-{id:10,date:"2026-11-08",time:"07.30–11.30 WIB",title:"Seserahan & Akad Nikah",detail:"Seserahan, prosesi akad nikah, sungkeman, foto keluarga, dan ramah tamah.",location:"Jogonalan Kidul RT 05, Tirtonirmolo, Kasihan, Bantul",status:"Belum"},
-{id:11,date:"2026-11-08",time:"18.30–21.30 WIB",title:"Resepsi Pernikahan",detail:"Kirab, pembukaan resepsi, ramah tamah, hiburan, foto bersama, lempar handbouquet, dan penutupan.",location:"Jogonalan Kidul RT 05, Tirtonirmolo, Kasihan, Bantul",status:"Belum"}
-];
-const people=[
-["Pemangku Hajat","Bpk. Supomo & Ibu Rubinem","Keluarga"],
-["Penasehat","Bpk. Mugiyono T.S.; Bpk. Agus Marwanto (Ketua RT 05)","Kepanitiaan"],
-["Ketua","Bpk. Agus Joko Nugroho; Bpk. Eko Puji Slameto","Kepanitiaan"],
-["Sekretaris","Bpk. Anjar Gigih Dewanto","Kepanitiaan"],
-["Perlengkapan","Bpk. Yogo (Koordinator); Bpk. Sumarjo; Bpk. Ediyarto; Bpk. Sarjiyanto; Bpk. Subardi; Bpk. Agus S.B.; Bpk. Sudariyanto; Bpk. Ponco; Bpk. Prayoko; Sdr. Banjari; Sdr. Giyanto","Seksi"],
-["Tarub","Bpk. Suparno (Koordinator); Bpk. Ngadiman; Bpk. Supri; Bpk. H. Muhammad Farid; Bpk. Ahmad Basuki; Bpk. Suyudi; Bpk. Suparmin; Bpk. Mujiono; Bpk. M. Amri","Seksi"],
-["Penerangan/Listrik","Bpk. Sudarmanto (Koordinator); Bpk. Toton Linawan; Sdr. Danang","Seksi"],
-["Keamanan & Parkir","Bpk. Surasto (Koordinator); Bpk. Sukardi; Bpk. Dwi Santoso; Bpk. Fajar S.P.; Bpk. M. Ali; Bpk. Siyamto","Seksi"],
-["Kembar Mayang","Bpk. Marsudi Trigono","Seksi"],
-["Pencari Daun Tarub","Bpk. Eko Waljiyanto (Koordinator); Bpk. Adi Hendratmo; Bpk. Junianto; Sdr. Joko Purwanto; Sdr. Purnomo","Seksi"],
-["Patehan","Bpk. Kodrat Slamet; Bpk. Mas Udi","Seksi"],
-["Pengedar Undangan","Sdr. Joko Purwanto; Sdr. Aditama Mu’arif; Sdr. Abi Oktavian","Seksi"],
-["Pengawas Konsumsi/Catering","Ibu Endarwati (Koordinator); Ibu Desi; Ibu Supriati; Rhizky Catering (Vendor)","Seksi"],
-["Penghubung Tamu","Ibu Supriyanti; Ibu Fina; Sdri. Tri Wijayanti","Seksi"],
-["Among Tamu","Bpk. Agus Marwanto Sekalian; Bpk. Jamroni Sekalian; Bpk. Jadi Kuswanto Sekalian; Bpk. Anggit Sekalian; Bpk. Reza Sekalian","Seksi"],
-["Sinoman","Ivan Aridwiyanto (Koordinator); Abi Oktavian; Angga Manta Aji; Agus Rismanto; Aditama Mu’arif; Yusuf; Amin (khusus malam Midodareni 6 Nov 2026)","Seksi"],
-["Masak","Ibu Suparno (Koordinator); Ibu Suprihatin; Ibu Par Eko; Ibu Yulianti; Ibu Tri Supriyanti; Ibu Hj. Triningsih Handayani; Ibu Janti; Ibu Fina; Ibu Erni; Ibu Boniyem; Ibu Lia; Ibu Naning","Seksi"],
-["Adang","Ibu Atun; Ibu Suratini; Ibu Paijem Walijo","Seksi"],
-["Sound System","Bpk. Irun (Vendor)","Vendor"],
-["Koordinator Acara","HNP Wedding Organizer","Vendor"],
-["Koordinator Keluarga CPW","Bpk. Anjar Gigih Dewanto","Keluarga"],
-["Koordinator Keluarga CPP","Bpk. Jasmono","Keluarga"],
-["MC Akad & Seserahan","Bpk. Supoyo","Petugas Acara"],
-["MC Resepsi","Hady Nugroho (pihak W.O.)","Petugas Acara"],
-["Seksi Acara Seserahan & Akad","Petugas KUA, khutbah dan doa: KUA Kapanewon Kasihan; Kalam Illahi: Bpk. Ardison; Wali nikah: Bpk. Supomo; Saksi CPW: Bpk. Agus Paryanto; Atur Pambagyaharja: Bpk. Slamet Raharjo; Atur Panampi CPW: Bpk. Muh Adab (Bpk. Dukuh); Pendamping CPW: Ibu Agni Sufya Mukti & Ibu Kuswanti; Pendamping CPP: orang tua CPP; Pengatur kursi/layout: HNP Wedding Organizer; Pengamanan buku nikah: Bpk. Anjar Gigih Dewanto","Petugas Acara"],
-["Dekorasi","Bpk. Yudi / Tekun Tekan Dekorasi (Vendor)","Vendor"],
-["Penanggung Jawab Kotak Tali Asih","Ibu Sudarni","Petugas Acara"],
-["Penanggung Jawab Seserahan","Bpk. Anjar Gigih Dewanto & W.O.","Petugas Acara"],
-["Buku Tamu/Souvenir","Afna; Naila; Alin; Aisyah","Seksi"],
-["Hiburan","HNP Band","Vendor"],
-["Dokumentasi Foto & Video","Tepi Senja Photography","Vendor"],
-["Photobooth","Askala Photobooth","Vendor"],
-["Wedding Content Creator","Memorybloom","Vendor"],
-["Make Up","Itsnrn Make Up (pengantin & orang tua); Kurnia Beauty (keluarga)","Vendor"],
-["Busana","Titus Attire / Titus Tire Jogja","Vendor"],
-["Pembawa Kembar Mayang","Ibu Endarwati; Ibu Tri Agustina; Ibu Yulianti; Ibu Hj. Yuli Farid","Petugas Acara"]
-];
-const akad=[
-["05.30","Make Up CPW","Itsnrn MUA","Kediaman mempelai wanita"],
-["06.00","Make Up Ibu CPW & CPP","Itsnrn MUA","Kediaman mempelai wanita"],
-["07.30","Make up & ganti busana CPP","Itsnrn MUA","Robes session"],
-["08.30–08.55","Beauty shoot","Tepi Senja Photography","Persiapan foto"],
-["08.30","Keluarga CPW menuju area akad & seserahan","Anjar Gigih Dewanto",""],
-["08.45","Keluarga CPP tiba di area seserahan & akad nikah","Bpk. Jasmono",""],
-["08.55","Kirab keluarga CPP","HNP Wedding Organizer","Prosesi seserahan & akad"],
-["09.00","MC membuka acara","Bpk. Supoyo",""],
-["09.05","Seserahan","MC / HNP WO",""],
-["09.05–09.10","Atur Pambagyaharja","Bpk. Slamet Raharjo",""],
-["09.10–09.20","Jeda & pembagian snack","Rhizky Catering & HNP WO","Snack dan teh hangat"],
-["09.10–09.30","Serah terima CPP untuk acara seserahan","Wakil keluarga CPP dan Bpk. Muh Adab (menerima)","Dilanjutkan penyerahan pisang sanggan"],
-["09.30–09.35","Penyerahan simbolis seserahan","Ibu CPP kepada Ibu CPW; Ayah CPP kepada Ayah CPW","2 item seserahan"],
-["09.35–10.00","CPP, CPW, wali nikah, saksi, dan pembaca ayat suci Al-Qur’an dipersilakan duduk","Wali: Bpk. Supomo; saksi CPW: Bpk. Agus Paryanto; pembaca Al-Qur’an: Bpk. Ardison","Saksi CPP perlu dikonfirmasi"],
-["10.00–10.30","Prosesi akad nikah","KUA Kapanewon Kasihan",""],
-["10.30–10.40","Penyerahan mahar, penyematan cincin & foto keluarga inti","MC, HNP WO & Tepi Senja Photography",""],
-["10.40–11.00","Kepyok kembar mayang & sungkeman","MC, HNP WO & Tepi Senja Photography","Pengantin dan orang tua"],
-["11.00–11.30","Acara selesai; tamu menikmati hidangan akad","MC, HNP WO & Tepi Senja Photography","Hidangan piring terbang"],
-["11.30–11.55","Tamu mengucapkan selamat & berfoto dengan pengantin","HNP WO & Tepi Senja Photography",""],
-["11.55–12.00","MC menutup acara seserahan & akad nikah","Bpk. Supoyo",""]
-];
-const resepsi=[
-["14.00","Retouch pengantin wanita","Itsnrn MUA","Kediaman mempelai wanita"],
-["14.00","Make up among tamu & buku tamu putri","Kurnia Beauty",""],
-["16.30","Ganti busana pengantin pria","Itsnrn MUA",""],
-["17.00","Ganti busana among tamu putra","Kurnia Beauty",""],
-["17.00–18.00","Beauty shoot look resepsi","Tepi Senja Photography",""],
-["18.00","Keluarga CPW & CPP tiba di area resepsi","Anjar Gigih Dewanto",""],
-["18.00–18.45","Foto bersama keluarga & panitia","HNP WO & Tepi Senja Photography",""],
-["18.45–18.55","Prosesi kirab saxophone","HNP WO & HNP Band",""],
-["18.55–19.00","Pembukaan acara resepsi","MC Hady Nugroho",""],
-["19.00–20.45","Tamu mengucapkan selamat, berfoto, menikmati buffet & stall; acara dan lagu","MC, HNP WO, HNP Band, Rhizky Catering, Tepi Senja, Memorybloom & Askala Photobooth",""],
-["20.45–20.55","Lempar handbouquet","HNP WO & MC",""],
-["20.55–21.00","Mempelai turun & MC menutup acara","MC Hady Nugroho","Flashmob"]
-];
-const fmtDate=d=>new Date(d+"T12:00:00").toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-let state={agenda:initialAgenda,updates:[],sbUrl:"",sbKey:""};
-const STORAGE="tiwiAlifWeddingV1";
-function load(){try{const s=JSON.parse(localStorage.getItem(STORAGE)||"null");if(s)state={...state,...s};}catch(e){}}
-function autoUpdateAgendaStatuses(){
- const today=new Date(); today.setHours(0,0,0,0);
- state.agenda=state.agenda.map(a=>{
-   const d=new Date(a.date+"T00:00:00"); d.setHours(0,0,0,0);
-   if(a.status==="Selesai") return a;
-   if(d<today) return {...a,status:"Selesai"};
-   if(d.getTime()===today.getTime()) return {...a,status:"Berjalan"};
-   return {...a,status:"Belum"};
- });
- try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch(e){}
-}
-function save(){localStorage.setItem(STORAGE,JSON.stringify(state));renderAll();}
-function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function toast(t){const el=document.getElementById("toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2600)}
-function statusClass(s){return s==="Selesai"?"done":s==="Berjalan"?"progress":"upcoming"}
-function renderDashboard(){
-const done=state.agenda.filter(a=>a.status==="Selesai").length, running=state.agenda.filter(a=>a.status==="Berjalan").length, pct=state.agenda.length?Math.round(done/state.agenda.length*100):0;
-document.getElementById("statAgenda").textContent=state.agenda.length;document.getElementById("statDone").textContent=done;document.getElementById("statDoneSub").textContent=running?running+" agenda sedang berjalan":"Agenda selesai";document.getElementById("statProgress").textContent=pct+"%";document.getElementById("statProgressSub").textContent=done+" dari "+state.agenda.length+" agenda selesai";document.getElementById("statRoles").textContent=people.length;document.getElementById("progressText").textContent=done+" dari "+state.agenda.length+" agenda selesai";document.getElementById("progressPct").textContent=pct+"%";document.getElementById("progressBar").style.width=pct+"%";
-const upcoming=state.agenda.filter(a=>a.status!=="Selesai").sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);
-document.getElementById("nextAgenda").innerHTML=upcoming.map(a=>`<div class="quick-item"><span class="dot"></span><div><b>${esc(a.title)}</b><small>${esc(fmtDate(a.date))} · ${esc(a.time)}</small></div></div>`).join("")||'<p class="muted">Semua agenda selesai.</p>';
-document.getElementById("syncStatus").textContent=state.sbUrl&&state.sbKey?"Supabase dikonfigurasi":"Mode lokal";
-}
-function renderAgenda(){
-const q=(document.getElementById("agendaSearch")?.value||"").toLowerCase(),f=document.getElementById("agendaFilter")?.value||"all";
-const list=state.agenda.filter(a=>(f==="all"||a.status===f)&&[a.title,a.detail,a.date,a.location].join(" ").toLowerCase().includes(q)).sort((a,b)=>a.date.localeCompare(b.date));
-document.getElementById("agendaList").innerHTML=list.map(a=>`<article class="agenda-card"><div class="agenda-date"><strong>${new Date(a.date+"T12:00:00").getDate()}</strong><span>${new Date(a.date+"T12:00:00").toLocaleDateString("id-ID",{month:"short"})}</span><div style="font-size:10px;margin-top:4px">${new Date(a.date+"T12:00:00").getFullYear()}</div></div><div><h3>${esc(a.title)}</h3><p>${esc(a.detail)}</p><div class="agenda-meta"><span class="pill">${esc(a.time)}</span><span class="pill">${esc(a.location||"Lokasi belum ditentukan")}</span></div></div><div><span class="pill ${statusClass(a.status)}">${esc(a.status==="Berjalan"?"On Progress":a.status==="Belum"?"Belum dimulai":"Selesai")}</span><div style="margin-top:10px"><select aria-label="Status agenda" onchange="changeStatus(${a.id},this.value)"><option ${a.status==="Belum"?"selected":""}>Belum</option><option value="Berjalan" ${a.status==="Berjalan"?"selected":""}>On Progress</option><option ${a.status==="Selesai"?"selected":""}>Selesai</option></select></div><button class="btn" style="margin-top:7px" onclick="editAgenda(${a.id})">Edit</button></div></article>`).join("")||'<div class="panel muted">Agenda tidak ditemukan.</div>';
-}
-window.changeStatus=(id,status)=>{state.agenda=state.agenda.map(a=>a.id===id?{...a,status}:a);save();toast("Status agenda diperbarui.");};
-function renderPeople(){
-const q=(document.getElementById("peopleSearch")?.value||"").toLowerCase(),f=document.getElementById("peopleFilter")?.value||"all";
-document.getElementById("peopleCards").innerHTML=people.map((p,i)=>({...p,id:i})).filter(p=>(f==="all"||p[2]===f)&&p.join(" ").toLowerCase().includes(q)).map(p=>`<article class="person-card"><div class="role">${esc(p[2])}</div><h3>${esc(p[0])}</h3><p>${esc(p[1])}</p></article>`).join("");
-}
-function renderRows(id,rows){document.getElementById(id).innerHTML=rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}
-function renderUpdates(){const el=document.getElementById("updatesList");el.innerHTML=state.updates.slice().reverse().map((u,i)=>`<article class="task"><div><h3>${esc(u.title)} <span class="pill ${u.status==="Selesai"?"done":u.status==="Berjalan"?"progress":"upcoming"}">${esc(u.status==="Berjalan"?"On Progress":u.status==="Belum"?"Belum dimulai":u.status)}</span></h3><p>${esc(u.date)} · ${esc(u.by||"Panitia")} · ${esc(u.note)}</p></div><button class="btn btn-danger" onclick="deleteUpdate('${u.id}')">Hapus</button></article>`).join("")||'<div class="panel muted">Belum ada update progres. Klik “Catat update” untuk menambahkan catatan pertama.</div>'}
-window.deleteUpdate=id=>{state.updates=state.updates.filter(u=>u.id!==id);save();toast("Catatan dihapus.")};
-function renderAll(){autoUpdateAgendaStatuses();renderDashboard();renderAgenda();renderPeople();renderUpdates();}
-function openModal(title,fields,onSave){
-document.getElementById("modalTitle").textContent=title;const form=document.getElementById("modalForm");
-form.innerHTML=fields.map(f=>`<div class="field"><label for="f_${f.name}">${esc(f.label)}</label>${f.type==="textarea"?`<textarea id="f_${f.name}" name="${f.name}" ${f.required?"required":""} placeholder="${esc(f.placeholder||"")}">${esc(f.value||"")}</textarea>`:f.type==="select"?`<select id="f_${f.name}" name="${f.name}">${f.options.map(o=>`<option ${o===f.value?"selected":""}>${esc(o)}</option>`).join("")}</select>`:`<input id="f_${f.name}" name="${f.name}" type="${f.type||"text"}" value="${esc(f.value||"")}" placeholder="${esc(f.placeholder||"")}" ${f.required?"required":""}>`}</div>`).join("")+`<div class="modal-actions"><button type="button" class="btn" id="cancelModal">Batal</button><button class="btn btn-primary" type="submit">Simpan</button></div>`;
-document.getElementById("modal").classList.add("open");document.getElementById("cancelModal").onclick=()=>document.getElementById("modal").classList.remove("open");form.onsubmit=e=>{e.preventDefault();const data=Object.fromEntries(new FormData(form).entries());onSave(data);document.getElementById("modal").classList.remove("open");};
-}
-function editAgenda(id=null){const a=state.agenda.find(x=>x.id===id)||{title:"",date:"2026-11-08",time:"",detail:"",location:"",status:"Belum"};openModal(id?"Edit agenda":"Tambah agenda",[{name:"title",label:"Nama agenda",value:a.title,required:true},{name:"date",label:"Tanggal",type:"date",value:a.date,required:true},{name:"time",label:"Waktu",value:a.time,required:true},{name:"location",label:"Lokasi",value:a.location},{name:"detail",label:"Detail / kebutuhan",type:"textarea",value:a.detail},{name:"status",label:"Status",type:"select",value:a.status,options:["Belum","Berjalan","Selesai"]}],d=>{if(id)state.agenda=state.agenda.map(x=>x.id===id?{...x,...d}:x);else state.agenda.push({...d,id:Date.now()});save();toast("Agenda tersimpan.");});}
-function addUpdate(){openModal("Catat update progres",[{name:"title",label:"Judul update",required:true,placeholder:"Contoh: Bambu untuk tarub sudah tersedia"},{name:"by",label:"Nama / seksi pelapor",placeholder:"Contoh: Seksi Tarub"},{name:"status",label:"Status",type:"select",value:"Berjalan",options:["Belum","Berjalan","Selesai"]},{name:"note",label:"Catatan, hambatan, atau tindak lanjut",type:"textarea",required:true},{name:"date",label:"Tanggal update",type:"date",value:new Date().toISOString().slice(0,10),required:true}],d=>{state.updates.push({...d,id:String(Date.now())});save();toast("Update progres disimpan.");});}
-function download(name,content,type="application/json"){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
-document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===b.dataset.view));});
-document.getElementById("addAgendaBtn").onclick=()=>editAgenda();document.getElementById("addUpdateBtn").onclick=addUpdate;
-document.getElementById("agendaSearch").oninput=renderAgenda;document.getElementById("agendaFilter").onchange=renderAgenda;document.getElementById("peopleSearch").oninput=renderPeople;
-document.getElementById("exportData").onclick=()=>download("cadangan-panitia-tiwi-alif.json",JSON.stringify(state,null,2));
-document.getElementById("exportPeople").onclick=()=>download("susunan-panitia-tiwi-alif.json",JSON.stringify(people.map(p=>({peran:p[0],anggota:p[1],kategori:p[2]})),null,2));
-document.getElementById("importFile").onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!Array.isArray(d.agenda)||!Array.isArray(d.updates))throw Error();state={...state,...d};save();toast("Cadangan berhasil diimpor.");}catch(err){toast("File cadangan tidak valid.");}e.target.value=""};
-document.getElementById("resetData").onclick=()=>{if(confirm("Reset semua status agenda dan catatan progres ke data awal?")){state={...state,agenda:initialAgenda.map(a=>({...a})),updates:[]};save();toast("Data direset.");}};
-document.getElementById("saveSupabase").onclick=()=>{state.sbUrl=document.getElementById("sbUrl").value.trim();state.sbKey=document.getElementById("sbKey").value.trim();save();toast("Konfigurasi tersimpan. Ikuti README untuk mengaktifkan sinkronisasi.");};
-function init(){load();const f=document.getElementById("peopleFilter");[...new Set(people.map(p=>p[2]))].forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;f.appendChild(o)});renderRows("akadRows",akad);renderRows("resepsiRows",resepsi);document.getElementById("sbUrl").value=state.sbUrl||"";document.getElementById("sbKey").value=state.sbKey||"";renderAll();}
-init();
+  const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('navlinks');
+  menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+
+  // Status agenda dihitung otomatis berdasarkan tanggal dan jam lokal perangkat.
+  function updateAgendaStatuses(){
+    const now=new Date();
+    const today=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+    const currentMinutes=now.getHours()*60+now.getMinutes();
+    document.querySelectorAll('.agenda-item[data-date]').forEach(item=>{
+      const date=item.dataset.date;
+      const toMinutes=t=>{const [h,m]=t.split(':').map(Number);return h*60+m};
+      const start=toMinutes(item.dataset.start), end=toMinutes(item.dataset.end);
+      let state,label;
+      if(date<today || (date===today && currentMinutes>=end)){state='done';label='Selesai / Done';}
+      else if(date===today && currentMinutes>=start && currentMinutes<end){state='progress';label='On Progress';}
+      else {state='upcoming';label='Akan Datang';}
+      const badge=item.querySelector('.auto-status');
+      if(badge){badge.className=`status auto-status ${state}`;badge.textContent=label;badge.setAttribute('aria-label',`Status acara: ${label}`);}
+    });
+  }
+  updateAgendaStatuses();
+  setInterval(updateAgendaStatuses,30000);
+  function bindSearch(inputId, containerId, emptyId, selector){
+    const input=document.getElementById(inputId), container=document.getElementById(containerId), empty=document.getElementById(emptyId);
+    if(!input||!container)return;
+    input.addEventListener('input',()=>{
+      const q=input.value.trim().toLocaleLowerCase('id');let shown=0;
+      container.querySelectorAll(selector).forEach(el=>{
+        const match=el.innerText.toLocaleLowerCase('id').includes(q);
+        el.classList.toggle('hidden',!match);if(match)shown++;
+      });
+      if(empty)empty.style.display=shown?'none':'block';
+    });
+  }
+  bindSearch('agendaSearch','agendaList','agendaEmpty','.searchable');
+  bindSearch('committeeSearch','committeeGrid','committeeEmpty','.searchable');
+  bindSearch('vendorSearch','vendorGrid','vendorEmpty','.searchable');
 </script>
 </body>
 </html>
